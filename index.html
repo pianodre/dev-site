@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dylan's Portfolio</title>
+    <link rel="stylesheet" href="compsci/css/base.css">
+    <link rel="stylesheet" href="compsci/css/homepage.css">
+    <link rel="stylesheet" href="compsci/css/about.css">
+    <link rel="stylesheet" href="compsci/css/projects.css">
+    <link rel="stylesheet" href="compsci/css/experiences.css">
+    <link rel="stylesheet" href="compsci/css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="compsci/js/typing-animation.js"></script>
+    <script src="compsci/js/music-notes-animation.js"></script>
+    <script src="compsci/js/experience-expand.js"></script>
+    <script src="compsci/js/hamburger-menu.js"></script>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Mobile-only profile box that appears at the top -->
+        <div class="mobile-profile-box">
+            <img src="content/name-white.png" alt="Dylan's Logo" class="profile-image">
+            <p class="profile-text">Software Engineer</p>
+        </div>
+        
+        <!-- Mobile-only sticky navigation bar -->
+        <nav class="mobile-nav-bar">
+            <div class="mobile-nav-container">
+                <button class="hamburger-menu" id="hamburger-toggle" aria-label="Toggle navigation menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+                <ul class="mobile-nav-menu" id="mobile-nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Projects</a></li>
+                    <li><a href="#work">Experiences</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- Hero Container (Always First) -->
+        <div id="home" class="container hero-container">
+            <nav class="sidebar">
+                <div class="profile-box">
+                    <img src="content/name-white.png" alt="Dylan's Logo" class="profile-image">
+                    <p class="profile-text">Software Engineer </p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Projects</a></li>
+                    <li><a href="#work">Experiences</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="social-icons">
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </nav>
+            
+            <main class="content">
+                <canvas id="matrix-canvas" class="matrix-background"></canvas>
+                <canvas id="music-notes-canvas" class="music-notes-background"></canvas>
+                
+                <!-- Hero Section with improved layout -->
+                <section class="hero">
+                    <div class="hero-content">
+                        <div class="hero-intro">
+                            <span class="hero-greeting">Hello, I'm</span>
+                        </div>
+                        
+                        <h1 class="hero-name">
+                            <span id="typing-text-name"></span>
+                            <span class="cursor cursor-name">|</span>
+                        </h1>
+                        
+                        <div class="hero-title">
+                            <span id="typing-text-title"></span>
+                            <span class="cursor cursor-title">|</span>
+                        </div>
+                        
+                        <p class="hero-description">
+                            <span id="typing-text-description"></span>
+                            <span class="cursor cursor-description">|</span>
+                        </p>
+                        
+                        <div class="hero-cta">
+                            <a href="#about" class="cta-button primary">
+                                <span>Explore My Work</span>
+                                <i class="fas fa-arrow-down"></i>
+                            </a>
+                            <a href="#contact" class="cta-button secondary">
+                                <span>Get In Touch</span>
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating elements for cybersecurity theme -->
+                    <div class="hero-decorations">
+                        <div class="floating-icon" data-delay="0">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="floating-icon" data-delay="0.5">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <div class="floating-icon" data-delay="1">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="floating-icon" data-delay="1.5">
+                            <i class="fas fa-terminal"></i>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Scroll indicator -->
+                <div class="scroll-indicator">
+                    <div class="scroll-arrow">
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <span class="scroll-text">Scroll to explore</span>
+                </div>
+            </main>
+        </div>
+
+        <!-- Content Sections (Always After Hero) -->
+        <div class="sections-container">
+            <!-- About Section -->
+            <section id="about" class="section about-section">
+                <div class="section-container">
+                    <h2 class="section-title"><span class="title-highlight">About</span></h2>
+                    <div class="about-content">
+                        <div class="person-icon">
+                            <img src="content/me.jpg" alt="Dylan's Profile" class="profile-image-about">
+                        </div>
+                        <p class="about-text">
+                            I'm a Computer Science student at Chapman University with a strong foundation in software development and experience in Python, SQL, C++, and Java, driven by a commitment to continuous learning. I enjoy the blend of creativity and problem-solving that software development offers and am always eager to take on new challenges and expand my skills. Outside of academics, I teach piano, train Brazilian Jiu Jitsu, and stay active, which help me maintain discipline and balance in my life.
+                        </p>
+                        <div class="interest-icons">
+                            <div class="icon-item">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Coding</span>
+                            </div>
+                            <div class="icon-item">
+                                <i class="fas fa-music"></i>
+                                <span>Piano</span>
+                            </div>
+                            <div class="icon-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Security</span>
+                            </div>
+                            <div class="icon-item">
+                                <i class="fas fa-database"></i>
+                                <span>Data</span>
+                            </div>
+                            <div class="icon-item">
+                                <i class="fas fa-fist-raised"></i>
+                                <span>BJJ</span>
+                            </div>
+                            <div class="icon-item">
+                                <i class="fas fa-brain"></i>
+                                <span>Learning</span>
+                            </div>
+                            <div class="icon-item">
+                                <i class="fas fa-running"></i>
+                                <span>Fitness</span>
+                            </div>
+                            <div class="icon-item">
+                                <i class="fas fa-terminal"></i>
+                                <span>CLI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="skills" class="section projects-section">
+                <div class="section-container">
+                    <h2 class="section-title"><span class="title-highlight">Projects</span></h2>
+                    <div class="projects-content">
+                        <div class="projects-grid">
+                            <!-- Project Card 1: TRSTxCyber Website -->
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <i class="fab fa-github"></i>
+                                    <h3 class="project-title">TRSTxCyber Website</h3>
+                                </div>
+                                <p class="project-description">Website developed during my internship at TRSTxCyber, a cybersecurity company.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Web Development</span>
+                                    <span class="tech-tag">Cybersecurity</span>
+                                </div>
+                                <a href="https://trstxcyber.com" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Project Card 2: Security Scanner -->
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <i class="fab fa-github"></i>
+                                    <h3 class="project-title">Security Scanner</h3>
+                                </div>
+                                <p class="project-description">A comprehensive security scanner that analyzes domains, emails, and passwords using APIs and databases to detect breaches and vulnerabilities.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                    <span class="tech-tag">SQL</span>
+                                </div>
+                                <a href="https://github.com/pianodre/TRST-scanner" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Project Card 3: Pacman Game -->
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <i class="fab fa-github"></i>
+                                    <h3 class="project-title">Pacman Game</h3>
+                                </div>
+                                <p class="project-description">Java implementation of Pacman that employs various design patterns from my Software Design class.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">Java</span>
+                                    <span class="tech-tag">Design Patterns</span>
+                                    <span class="tech-tag">OOP</span>
+                                </div>
+                                <a href="https://github.com/pianodre/Pacman" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Project Card 4: Webserver Database -->
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <i class="fab fa-github"></i>
+                                    <h3 class="project-title">Webserver Database</h3>
+                                </div>
+                                <p class="project-description">A comprehensive database management system created for my Database Management class.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">SQL</span>
+                                    <span class="tech-tag">Backend</span>
+                                    <span class="tech-tag">Database</span>
+                                </div>
+                                <a href="https://github.com" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Project Card 5: Portfolio Website -->
+                            <div class="project-card">
+                                <div class="project-header">
+                                    <i class="fab fa-github"></i>
+                                    <h3 class="project-title">Portfolio Website</h3>
+                                </div>
+                                <p class="project-description">My personal cyberpunk-themed portfolio website built with HTML, CSS, and JavaScript.</p>
+                                <div class="project-tech">
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                </div>
+                                <a href="https://https://github.com/pianodre/ernst-site.com" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                            </div>
+
+                            <!-- Empty Project Card 6 (Placeholder) -->
+                            <div class="project-card empty-card">
+                                <div class="empty-content">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <p>Future Project</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Experiences Section -->
+            <section id="work" class="section experiences-section">
+                <div class="section-container">
+                    <h2 class="section-title"><span class="title-highlight">Experiences</span></h2>
+                    <div class="experiences-content">
+                        <div class="experience-card" data-expandable>
+                            <div class="experience-header" data-toggle>
+                                <h3 class="company-name">TRSTxCyber</h3>
+                                <div class="header-right">
+                                    <span class="experience-date">Summer 2025</span>
+                                    <i class="fas fa-chevron-down expand-icon"></i>
+                                </div>
+                            </div>
+                            <div class="experience-content">
+                                <h4 class="job-title">Software Engineer Intern</h4>
+                                <p class="experience-description">
+                                    Built the company website from scratch and developed a comprehensive domain, email, and password scanner using multiple security APIs. Configured Microsoft 365 services including SharePoint, Exchange, and Teams while managing Global Admin tasks such as user provisioning, permissions management, and security policy implementation.
+                                </p>
+                                <div class="experience-tags">
+                                    <span class="tag">Web Development</span>
+                                    <span class="tag">Security APIs</span>
+                                    <span class="tag">Microsoft 365</span>
+                                    <span class="tag">Global Admin</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="experience-card" data-expandable>
+                            <div class="experience-header" data-toggle>
+                                <h3 class="company-name">Piano Teacher</h3>
+                                <div class="header-right">
+                                    <span class="experience-date">2021 - Present</span>
+                                    <i class="fas fa-chevron-down expand-icon"></i>
+                                </div>
+                            </div>
+                            <div class="experience-content">
+                                <h4 class="job-title">Independent Instructor, Mission Viejo</h4>
+                                <p class="experience-description">
+                                    Creating accessible and inclusive music education opportunities for students of all ages and skill levels. Developing personalized learning plans tailored to each student's goals and learning style.
+                                </p>
+                                <div class="experience-tags">
+                                    <span class="tag">Music Education</span>
+                                    <span class="tag">Teaching</span>
+                                    <span class="tag">Curriculum Development</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="experience-card" data-expandable>
+                            <div class="experience-header" data-toggle>
+                                <h3 class="company-name">Carlson Gracie Irvine</h3>
+                                <div class="header-right">
+                                    <span class="experience-date">August 2022 - Present</span>
+                                    <i class="fas fa-chevron-down expand-icon"></i>
+                                </div>
+                            </div>
+                            <div class="experience-content">
+                                <h4 class="job-title">Brazilian Jiu Jitsu Instructor, Tustin</h4>
+                                <p class="experience-description">
+                                    Leading youth classes and teaching self-discipline and technique to students aged 4-16. Creating structured training plans and coaching students in competition settings to develop their skills and confidence.
+                                </p>
+                                <div class="experience-tags">
+                                    <span class="tag">Youth Coaching</span>
+                                    <span class="tag">Martial Arts</span>
+                                    <span class="tag">Competition Training</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section contact-section">
+                <div class="section-container">
+                    <div class="contact-content">
+                        <div class="contact-left">
+                            <h2 class="contact-title">Get In Touch</h2>
+                        </div>
+                        <div class="contact-right">
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <a href="mailto:dylanernstr@gmail.com">dylanernstr@gmail.com</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <a href="tel:+19499333607">(949) 933-3607</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fab fa-linkedin"></i>
+                                    <a href="#" target="_blank">LinkedIn Profile</a>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fab fa-github"></i>
+                                    <a href="#" target="_blank">GitHub Profile</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</body>
+</html>
