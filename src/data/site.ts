@@ -47,7 +47,7 @@ export const identity = {
   resume: 'https://github.com/dylan-ernst/resume',
   // Set when the exact profile URL is confirmed; the link renders only if non-empty
   linkedin: '',
-  pianoSite: 'https://dylanernst.site',
+  pianoSite: 'https://dylan-ernst.com',
 }
 
 export const about = {
