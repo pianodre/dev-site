@@ -1,5 +1,5 @@
 /* ============================================================
-   Design tokens — GrayScale palette ("ink" ramp, white accent)
+   Design tokens: GrayScale palette ("ink" ramp, white accent)
    Re-skin the whole site from this block.
    ============================================================ */
 :root {
@@ -310,7 +310,7 @@ img {
 }
 
 /* ============================================================
-   Hero — the "stage": radial gradient + grain + vignette
+   Hero, the "stage": radial gradient + grain + vignette
    ============================================================ */
 .hero {
   position: relative;

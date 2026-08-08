@@ -1,5 +1,5 @@
 // Single source of truth for all site content.
-// Edit copy, projects, and experience here — never in the components.
+// Edit copy, projects, and experience here, never in the components.
 
 export interface Project {
   title: string
@@ -39,21 +39,21 @@ export const identity = {
     'Software Engineer',
   ],
   tagline:
-    'I design and ship full-stack products — AI-powered platforms, client websites, and cross-platform apps — from first commit to live in production.',
+    'I design and ship full-stack products (AI-powered platforms, client websites, and cross-platform apps) from first commit to live in production.',
   location: 'Orange County, CA',
   email: 'dylanernstr@gmail.com',
   phone: '(949) 933-3607',
   github: 'https://github.com/dylan-ernst',
   resume: 'https://github.com/dylan-ernst/resume',
-  // Set when the exact profile URL is confirmed — the link renders only if non-empty
+  // Set when the exact profile URL is confirmed; the link renders only if non-empty
   linkedin: '',
   pianoSite: 'https://dylanernst.site',
 }
 
 export const about = {
   paragraphs: [
-    "I'm a Computer Science student at Chapman University (B.S. in Computer Science, minor in Piano Performance — graduating December 2026) who builds software that real people use. Over the past year I've shipped an AI photo-processing platform for a photography client, a production website for a Brazilian Jiu-Jitsu gym, and internal security tooling at a cybersecurity firm.",
-    'I like the full arc of a product: talking to the client, architecting the backend, designing the interface, and deploying it live. Outside of code I teach piano at my own studio and coach youth Brazilian Jiu-Jitsu — both keep me disciplined, patient, and good at explaining hard things simply.',
+    "I'm a Computer Science student at Chapman University (B.S. in Computer Science, minor in Piano Performance, graduating December 2026) who builds software that real people use. Over the past year I've shipped an AI photo-processing platform for a photography client, a production website for a Brazilian Jiu-Jitsu gym, and internal security tooling at a cybersecurity firm.",
+    'I like the full arc of a product: talking to the client, architecting the backend, designing the interface, and deploying it live. Outside of code I teach piano at my own studio and coach youth Brazilian Jiu-Jitsu; both keep me disciplined, patient, and good at explaining hard things simply.',
   ],
   facts: [
     { label: 'Education', value: 'B.S. Computer Science, Chapman University · Dec 2026' },
@@ -89,9 +89,18 @@ export const projects: Project[] = [
     title: 'ClearCut',
     tagline: 'AI Photo-Processing Platform',
     description:
-      'Full-stack platform built for a professional photographer: AI image segmentation removes backgrounds from batches of high-resolution photos, and a custom AI vision pipeline reads the name sign held in each shot to automatically rename and sort every image to the correct client — saving a reported 80 hours of manual work in its first week. FastAPI backend with JWT auth, an atomic credit ledger, and production Stripe billing.',
-    tech: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'Stripe', 'Docker'],
+      'Full-stack platform built for a professional photographer: AI image segmentation removes backgrounds from batches of high-resolution photos, and a custom AI vision pipeline reads the name sign held in each shot to automatically rename and sort every image to the correct client, saving a reported 80 hours of manual work in its first week. FastAPI backend with JWT auth, an atomic credit ledger, and production Stripe billing.',
+    tech: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'OpenAI API', 'Docker'],
     privateNote: 'Private client work',
+    featured: true,
+  },
+  {
+    title: 'Data Breach Scanner',
+    tagline: 'Security Tool on AWS',
+    description:
+      'Breach-scanning application aggregating results from APIs covering 2,000+ breach databases for real-time exposure analysis, with JWT authentication, role-based access control, and audit logging. Deployed on AWS with Docker for internal sales and engineering use.',
+    tech: ['Python', 'Flask', 'React', 'PostgreSQL', 'Docker'],
+    privateNote: 'Internal company tool',
     featured: true,
   },
   {
@@ -119,26 +128,27 @@ export const projects: Project[] = [
     live: 'https://carlsongracie-irvine.com',
   },
   {
+    title: 'Chris Hori Photography',
+    tagline: 'Client Photography Portfolio',
+    description:
+      'Portfolio and booking site for a Southern California photographer, live in production on a custom domain. Multi-category galleries (professional, sports, real estate, and portraits) rendered with a justified-row layout engine, all gallery content centralized in a single data file, and a booking page for client inquiries. Deployed as a single-page app with deep-linkable client-side routes.',
+    tech: ['React', 'Vite', 'React Router'],
+    live: 'https://chrishori.com',
+  },
+  {
+    title: 'Triad Turf Estimates',
+    tagline: 'Automated Estimate Generator',
+    description:
+      'Estimate and invoice generator built for Triad Turf Co. Creates customer estimates with automatically computed line-item and grand totals, inline-editable sheet text, and per-browser persistence, then prints them as clean letter-sized PDFs with a multi-page-safe layout: repeating headers and controlled page breaks. Zero dependencies: plain HTML, CSS, and JavaScript.',
+    tech: ['JavaScript', 'HTML/CSS'],
+    live: 'https://dylan-ernst.github.io/Triad-Turf-Estimates/',
+  },
+  {
     title: 'Music Theory Trainer',
     tagline: 'Cross-Platform Education App',
     description:
-      'Music-theory app with 16 interactive drill games and a 31-lesson curriculum, designed from my own piano-teaching practice and now used by over 15 students across two studios. Includes a custom music-notation rendering engine built from scratch in SVG — staves, clefs, key signatures, and chord engraving. Ships to iOS, Android, and web from one codebase.',
+      'Music-theory app with 16 interactive drill games and a 31-lesson curriculum, designed from my own piano-teaching practice and now used by over 15 students across two studios. Includes a custom music-notation rendering engine built from scratch in SVG: staves, clefs, key signatures, and chord engraving. Ships to iOS, Android, and web from one codebase.',
     tech: ['React Native', 'Expo', 'TypeScript'],
-  },
-  {
-    title: 'Personal LLM Agent Platform',
-    tagline: 'AI Agent with Real-World Tools',
-    description:
-      'Web-based AI agent with a custom React interface and FastAPI backend, orchestrating LLM tool-calling to turn natural-language requests into completed actions — integrated with Microsoft and Google APIs to draft email, manage calendars, and schedule events autonomously.',
-    tech: ['Python', 'FastAPI', 'React'],
-  },
-  {
-    title: 'Data Breach Scanner',
-    tagline: 'Security Tool on AWS',
-    description:
-      'Breach-scanning application aggregating results from APIs covering 2,000+ breach databases for real-time exposure analysis, with JWT authentication, role-based access control, and audit logging. Deployed on AWS with Docker for internal sales and engineering use.',
-    tech: ['Python', 'Flask', 'React', 'PostgreSQL', 'Docker'],
-    privateNote: 'Internal company tool',
   },
 ]
 
@@ -146,14 +156,14 @@ export const experience: Experience[] = [
   {
     company: 'Unite IT & TRSTXCYBER',
     location: 'Huntington Beach, CA · partnered companies',
-    period: 'June 2025 – June 2026',
+    period: 'June 2025 – Present',
     roles: [
-      { title: 'Software Developer / IT Support Technician', period: 'Dec 2025 – June 2026' },
+      { title: 'Software Developer / IT Support Technician', period: 'Dec 2025 – Present' },
       { title: 'Software Engineer Intern', period: 'June 2025 – Dec 2025' },
     ],
     bullets: [
       'Engineered and deployed a Python-based data breach scanning tool on AWS with secure authentication and activity logging.',
-      "Built and administered the company's entire CRM — contacts, pipelines, automated workflows, and AI-powered features — eliminating manual work across sales operations.",
+      "Built and administered the company's entire CRM (contacts, pipelines, automated workflows, and AI-powered features), eliminating manual work across sales operations.",
       'Directed a team of three interns to design and deploy a responsive company website, improving inbound sales inquiries.',
       'Managed devices and user access across client environments with Datto RMM and Active Directory.',
     ],
@@ -165,7 +175,7 @@ export const experience: Experience[] = [
     period: '2021 – Present',
     roles: [{ title: 'Piano Teacher & Studio Owner', period: '' }],
     bullets: [
-      'Run a private piano studio end to end — recruiting, scheduling, curriculum, and billing for students of all ages.',
+      'Run a private piano studio end to end: recruiting, scheduling, curriculum, and billing for students of all ages.',
       'Designed personalized learning plans that became the foundation for my Music Theory Trainer app.',
     ],
     tags: ['Teaching', 'Entrepreneurship', 'Curriculum Design'],
