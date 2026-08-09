@@ -136,6 +136,14 @@ export const projects: Project[] = [
     live: 'https://chrishori.com',
   },
   {
+    title: 'Evan Scott Richards',
+    tagline: 'Client Portfolio with Custom CMS',
+    description:
+      'Portfolio and press site for a conductor and tenor, live in production on a custom domain. The client edits every piece of content himself through a custom admin site manager backed by Supabase: schedule, news, press, gallery, and page copy all publish without a rebuild, with photo uploads resized in the browser before storage and row-level security limiting writes to an editor allow-list. Ships a 68-event performance schedule with multi-category filtering and a 148-photo gallery with a lightbox and shuffle logic that keeps images from the same shoot out of adjacent slots. Pages paint from bundled content first, then swap in live database copy, and the Supabase client is hand-rolled with zero dependencies.',
+    tech: ['React', 'TypeScript', 'Supabase', 'Vite'],
+    live: 'https://evanscottrichards.com',
+  },
+  {
     title: 'Triad Turf Estimates',
     tagline: 'Automated Estimate Generator',
     description:
