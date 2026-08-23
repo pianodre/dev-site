@@ -1,6 +1,16 @@
 // Single source of truth for all site content.
 // Edit copy, projects, and experience here, never in the components.
 
+/**
+ * The framed screenshot shown at the top of a featured project card.
+ * The file lives in `public/shots/`; `label` is the caption in the window bar.
+ */
+export interface ProjectVisual {
+  src: string
+  alt: string
+  label: string
+}
+
 export interface Project {
   title: string
   tagline: string
@@ -12,6 +22,8 @@ export interface Project {
   repo?: string
   /** Shown instead of links when the work is private */
   privateNote?: string
+  /** Framed screenshot, shown on featured cards only */
+  visual?: ProjectVisual
   /** Featured projects render as a full-width card at the top of the grid */
   featured?: boolean
 }
@@ -86,22 +98,40 @@ export const skills = [
 
 export const projects: Project[] = [
   {
+    title: 'Data Breach Scanner',
+    visual: {
+      src: '/shots/data-breach-scanner.jpg',
+      alt: 'Scan results showing a 5.1 risk score, a moderate exposure rating, and breach statistics',
+      label: 'Scan Results',
+    },
+    featured: true,
+    tagline: 'Security Tool on AWS',
+    description:
+      'Breach-scanning application aggregating results from APIs covering 2,000+ breach databases for real-time exposure analysis, with JWT authentication, role-based access control, and audit logging. Deployed on AWS with Docker for internal sales and engineering use.',
+    tech: ['Python', 'Flask', 'React', 'PostgreSQL', 'Docker'],
+    privateNote: 'Internal company tool',
+  },
+  {
+    title: 'Evan Scott Richards',
+    visual: {
+      src: '/shots/evan-scott-richards.jpg',
+      alt: 'Evan Scott Richards home page with the full-bleed conducting photo',
+      label: 'evanscottrichards.com',
+    },
+    featured: true,
+    tagline: 'Client Portfolio with Custom CMS',
+    description:
+      'Portfolio and press site for a conductor and tenor, live in production on a custom domain. The client edits every piece of content himself through a custom admin site manager backed by Supabase: schedule, news, press, gallery, and page copy all publish without a rebuild, with photo uploads resized in the browser before storage and row-level security limiting writes to an editor allow-list. Ships a 68-event performance schedule with multi-category filtering and a 148-photo gallery with a lightbox and shuffle logic that keeps images from the same shoot out of adjacent slots. Pages paint from bundled content first, then swap in live database copy, and the Supabase client is hand-rolled with zero dependencies.',
+    tech: ['React', 'TypeScript', 'Supabase', 'Vite'],
+    live: 'https://evanscottrichards.com',
+  },
+  {
     title: 'ClearCut',
     tagline: 'AI Photo-Processing Platform',
     description:
       'Full-stack platform built for a professional photographer: AI image segmentation removes backgrounds from batches of high-resolution photos, and a custom AI vision pipeline reads the name sign held in each shot to automatically rename and sort every image to the correct client, saving a reported 80 hours of manual work in its first week. FastAPI backend with JWT auth, an atomic credit ledger, and production Stripe billing.',
     tech: ['Python', 'FastAPI', 'React', 'PostgreSQL', 'OpenAI API', 'Docker'],
     privateNote: 'Private client work',
-    featured: true,
-  },
-  {
-    title: 'Data Breach Scanner',
-    tagline: 'Security Tool on AWS',
-    description:
-      'Breach-scanning application aggregating results from APIs covering 2,000+ breach databases for real-time exposure analysis, with JWT authentication, role-based access control, and audit logging. Deployed on AWS with Docker for internal sales and engineering use.',
-    tech: ['Python', 'Flask', 'React', 'PostgreSQL', 'Docker'],
-    privateNote: 'Internal company tool',
-    featured: true,
   },
   {
     title: 'Jiujitsu Manager',
@@ -134,14 +164,6 @@ export const projects: Project[] = [
       'Portfolio and booking site for a Southern California photographer, live in production on a custom domain. Multi-category galleries (professional, sports, real estate, and portraits) rendered with a justified-row layout engine, all gallery content centralized in a single data file, and a booking page for client inquiries. Deployed as a single-page app with deep-linkable client-side routes.',
     tech: ['React', 'Vite', 'React Router'],
     live: 'https://chrishori.com',
-  },
-  {
-    title: 'Evan Scott Richards',
-    tagline: 'Client Portfolio with Custom CMS',
-    description:
-      'Portfolio and press site for a conductor and tenor, live in production on a custom domain. The client edits every piece of content himself through a custom admin site manager backed by Supabase: schedule, news, press, gallery, and page copy all publish without a rebuild, with photo uploads resized in the browser before storage and row-level security limiting writes to an editor allow-list. Ships a 68-event performance schedule with multi-category filtering and a 148-photo gallery with a lightbox and shuffle logic that keeps images from the same shoot out of adjacent slots. Pages paint from bundled content first, then swap in live database copy, and the Supabase client is hand-rolled with zero dependencies.',
-    tech: ['React', 'TypeScript', 'Supabase', 'Vite'],
-    live: 'https://evanscottrichards.com',
   },
   {
     title: 'Triad Turf Estimates',

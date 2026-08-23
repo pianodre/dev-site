@@ -18,6 +18,7 @@
   --ink-950: #0a0a0b;
 
   --font: 'Montserrat', system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', SFMono-Regular, Menlo, Consolas, monospace;
   --tracking-label: 0.25em;
   --max-width: 1120px;
   --radius: 14px;
@@ -179,11 +180,17 @@ img {
   text-transform: uppercase;
 }
 
-/* Reveal-on-scroll */
+/* Reveal-on-scroll, replayed in both directions */
 .reveal {
   opacity: 0;
   transform: translateY(22px);
   transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Set by the hook when the element left through the top, so scrolling back up
+   brings it down into place instead of pushing it up from below. */
+.reveal--above {
+  transform: translateY(-22px);
 }
 
 .reveal.is-visible {
@@ -195,7 +202,8 @@ img {
   html {
     scroll-behavior: auto;
   }
-  .reveal {
+  .reveal,
+  .reveal--above {
     opacity: 1;
     transform: none;
     transition: none;
@@ -551,8 +559,15 @@ img {
   border: 1px solid var(--ink-700);
   border-radius: var(--radius);
   box-shadow: var(--card-shadow);
-  padding: 30px;
+  overflow: hidden; /* clips the visual to the card's rounded corners */
   transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.project__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 26px 30px 30px;
 }
 
 .project:hover {
@@ -562,6 +577,31 @@ img {
 
 .project--featured {
   grid-column: 1 / -1;
+}
+
+/* A featured card runs the full grid width, so its screenshot sits beside the
+   copy rather than stacked above it. */
+@media (min-width: 861px) {
+  .project--featured {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  .project--featured .shot {
+    flex: 0 0 46%;
+  }
+  .project--featured .shot__body {
+    height: calc(100% - 34px); /* the window bar takes the rest */
+    aspect-ratio: auto;
+  }
+  .project--featured .project__body {
+    flex: 1 1 auto;
+    justify-content: center;
+  }
+  /* The screenshot sets the card height here, so the copy sits as a centred
+     block instead of the description stretching to fill it. */
+  .project--featured .project__desc {
+    flex-grow: 0;
+  }
 }
 
 .project__top {
@@ -644,13 +684,80 @@ img {
   color: var(--ink-500);
 }
 
+
+/* ------------------------------------------------------------
+   Project visual: a framed screenshot band, featured cards only.
+   ------------------------------------------------------------ */
+.shot {
+  background: var(--ink-900);
+}
+
+.shot__bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 34px;
+  padding: 0 18px;
+  background: var(--ink-900);
+}
+
+/* Three window dots drawn as one element, so the bar stays a two-child flex row. */
+.shot__dots {
+  flex-shrink: 0;
+  width: 38px;
+  height: 8px;
+  background-image: radial-gradient(circle 4px at 4px 4px, var(--ink-600) 98%, transparent 100%);
+  background-size: 15px 8px;
+  background-repeat: repeat-x;
+}
+
+.shot__label {
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-400);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* The capture is inset on the card's own background rather than run edge to
+   edge, so a screenshot with its own palette reads as an object sitting in the
+   card instead of a panel clashing with it. */
+.shot__body {
+  aspect-ratio: 16 / 7;
+  padding: 18px;
+  overflow: hidden;
+  background: var(--ink-900);
+}
+
+/* Anchored top left: a capture's left edge carries the logo and headline, so
+   any crop comes off the right. */
+.shot__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  object-position: top left;
+  box-shadow:
+    0 0 0 1px var(--ink-700),
+    0 14px 32px rgba(0, 0, 0, 0.55);
+}
+
+@media (max-width: 720px) {
+  .shot__body {
+    aspect-ratio: 16 / 9;
+  }
+}
+
 @media (max-width: 720px) {
   .projects__grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  .project {
-    padding: 22px;
+  .project__body {
+    padding: 20px 22px 24px;
   }
 }
 
@@ -826,3 +933,5 @@ img {
 .footer__links a:hover {
   color: var(--white);
 }
+
+
