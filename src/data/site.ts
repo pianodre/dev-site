@@ -98,6 +98,15 @@ export const skills = [
 
 export const projects: Project[] = [
   {
+    title: 'NL Constraint Solver',
+    featured: true,
+    tagline: 'Natural Language to SMT Solving',
+    description:
+      'Independent-study application that turns plain-English scheduling problems into formally solved schedules. A language model translates the request into a pydantic-validated constraint representation, then a deterministic compiler emits Z3 SMT assertions and solves them, so the model never touches the reasoning and every answer is machine-verified. Solvable problems return a concrete schedule; impossible ones return the minimal set of conflicting requirements, traced back through the Z3 unsat core and quoted in the wording the user originally typed. Covers six constraint types plus implicit no-overlap over a weekly hourly grid, validated by a hand-authored 30-problem benchmark (20 solvable, 10 contradictory) that compiles and solves to the expected result offline, alongside 32 automated tests. Ships a CLI plus an optional FastAPI demo UI layered over the same pipeline. The linked repository carries a recorded demo of the app plus the UML class and entity relationship diagrams behind it.',
+    tech: ['Python', 'Z3 SMT', 'OpenAI API', 'Pydantic', 'FastAPI'],
+    repo: 'https://github.com/dylan-ernst/NL-Constraint-Solver-Showcase',
+  },
+  {
     title: 'Data Breach Scanner',
     visual: {
       src: '/shots/data-breach-scanner.jpg',
@@ -179,14 +188,6 @@ export const projects: Project[] = [
     description:
       'Music-theory app with 16 interactive drill games and a 31-lesson curriculum, designed from my own piano-teaching practice and now used by over 15 students across two studios. Includes a custom music-notation rendering engine built from scratch in SVG: staves, clefs, key signatures, and chord engraving. Ships to iOS, Android, and web from one codebase.',
     tech: ['React Native', 'Expo', 'TypeScript'],
-  },
-  {
-    title: 'NL Constraint Solver',
-    tagline: 'Natural Language to SMT Solving',
-    description:
-      'Independent-study application that turns plain-English scheduling problems into formally solved schedules. A language model translates the request into a pydantic-validated constraint representation, then a deterministic compiler emits Z3 SMT assertions and solves them, so the model never touches the reasoning and every answer is machine-verified. Solvable problems return a concrete schedule; impossible ones return the minimal set of conflicting requirements, traced back through the Z3 unsat core and quoted in the wording the user originally typed. Covers six constraint types plus implicit no-overlap over a weekly hourly grid, validated by a hand-authored 30-problem benchmark (20 solvable, 10 contradictory) that compiles and solves to the expected result offline, alongside 32 automated tests. Ships a CLI plus an optional FastAPI demo UI layered over the same pipeline.',
-    tech: ['Python', 'Z3 SMT', 'OpenAI API', 'Pydantic', 'FastAPI'],
-    privateNote: 'Chapman independent study, private course repo',
   },
 ]
 
